@@ -1,0 +1,129 @@
+12/01/23, 9:05 AM - Messages and calls are end-to-end encrypted. No one outside of this chat, not even WhatsApp, can read or listen to them. Tap to learn more.
+12/01/23, 9:05 AM - Rahul created group "Project Alpha 🚀"
+12/01/23, 9:06 AM - Rahul added Priya
+12/01/23, 9:06 AM - Rahul added Amit
+12/01/23, 9:07 AM - Rahul: Hey everyone! Welcome to the project group 😊
+12/01/23, 9:08 AM - Priya: Thanks Rahul! 
+What's the timeline for this?
+12/01/23, 9:10 AM - Amit: Hey 👋 
+I'm excited to start working on this
+Let me know what you need from me
+12/01/23, 9:15 AM - Rahul: So here's the plan:
+1. Research phase - 2 weeks
+2. Development - 4 weeks  
+3. Testing - 1 week
+Sounds good?
+01/12/2023, 10:30 - Priya: Sounds great! I'll handle the research part
+12/01/23, 11:45 AM - Amit: <Media omitted>
+12/01/23, 11:46 AM - Amit: Check out this diagram I made
+12/01/23, 11:50 AM - Rahul: Awesome work Amit! 🎉
+12/01/23, 2:30 PM - Priya: I found some interesting papers:
+- "Machine Learning in Healthcare" by Smith et al.
+- "Deep Learning Applications" by Johnson
+Will share the PDFs tomorrow
+12/01/23, 2:35 PM - Rahul: Perfect! Thanks Priya 😊
+
+12/02/23, 8:00 AM - Amit: Good morning everyone! ☀️
+12/02/23, 8:05 AM - Priya: Morning! 
+I'll share those papers now
+12/02/23, 8:06 AM - Priya: <Media omitted>
+12/02/23, 8:07 AM - Priya: <Media omitted>
+12/02/23, 8:10 AM - Rahul: Thanks! Will go through them today
+2/12/2023, 09:30 - Amit: I've been thinking about the architecture...
+We should probably use microservices
+12/02/23, 10:15 AM - Rahul: Good idea! Let's discuss in the meeting
+12/02/23, 10:16 AM - Priya: What meeting? 😅
+12/02/23, 10:17 AM - Rahul: Oh sorry, I forgot to mention
+Let's have a call at 3 PM today?
+12/02/23, 10:18 AM - Priya: Works for me ✅
+12/02/23, 10:18 AM - Amit: Same here 👍
+12/02/23, 3:05 PM - Rahul: Starting the call now
+12/02/23, 3:06 PM - Priya: Joining...
+12/02/23, 4:30 PM - Rahul: Great discussion today! Here's the summary:
+- Amit will design the backend
+- Priya will do the ML research
+- I'll coordinate and do frontend
+Let's aim to complete phase 1 by next week!
+12/02/23, 4:35 PM - Amit: Noted! 📝
+12/02/23, 4:36 PM - Priya: On it! 💪
+
+12/03/23, 7:55 AM - Amit: Early start today 😅
+Working on the database schema
+12/03/23, 9:00 AM - Priya: 
+12/03/23, 9:30 AM - Rahul: Looking good! How's everyone doing?
+12/03/23, 09:31 AM - Amit: Making good progress. The database design is almost done.
+I'm using PostgreSQL for this.
+What do you guys think?
+12/03/23, 9:35 AM - Priya: PostgreSQL is great for our use case
+I've used it before for similar projects
+12/03/23, 9:36 AM - Rahul: Agreed! Go ahead with it Amit
+12/03/23, 12:00 PM - Amit: Lunch break 🍕
+12/03/23, 12:01 PM - Priya:   Same here, getting some biryani 🍛
+12/03/23, 12:02 PM - Rahul:  Nice! I'm having pasta 🍝
+12/03/23, 2:00 PM - Priya: Back! I've made some progress on the ML model
+The initial accuracy is around 78%
+Need to tune hyperparameters
+12/03/23, 2:05 PM - Amit: That's a good start! 
+12/03/23, 2:06 PM - Rahul: Nice work Priya! Keep at it 💪
+12/03/23, 5:00 PM - Rahul: End of day update:
+Frontend prototype is 40% done
+Will share screenshots tomorrow
+Good night everyone! 🌙
+12/03/23, 5:01 PM - Amit: Good night! I'll push the schema to GitHub tonight
+12/03/23, 5:02 PM - Priya: Night! Great work today team 🌟
+
+12/04/23, 8:30 AM - Rahul: Good morning! 🌅
+Check out the prototype:
+12/04/23, 8:31 AM - Rahul: <Media omitted>
+12/04/23, 8:32 AM - Rahul: <Media omitted>
+12/04/23, 8:33 AM - Rahul: <Media omitted>
+12/04/23, 8:40 AM - Amit: Wow that looks amazing! 🎨
+The color scheme is perfect
+12/04/23, 8:45 AM - Priya: Love it! Very clean design 😍
+But can we add a dark mode option?
+12/04/23, 8:50 AM - Rahul: Great idea! I'll work on that
+12/04/23, 10:00 AM - Amit: Database schema is live on GitHub!
+Here's the ER diagram:
+12/04/23, 10:01 AM - Amit: <Media omitted>
+12/04/23, 10:05 AM - Priya: Looks solid! A couple of suggestions though:
+1. Add an index on the user_id column
+2. Consider partitioning the events table
+It'll help with query performance
+12/04/23, 10:10 AM - Amit: Good points! Will update 👍
+12/04/23, 2:00 PM - Priya: ML update: accuracy improved to 85%! 🎯
+Used gradient boosting with hyperparameter tuning
+12/04/23, 2:05 PM - Rahul: That's fantastic progress! 🎊
+12/04/23, 2:06 PM - Amit: 85% is really good for the first iteration
+12/04/23, 5:30 PM - Rahul: Day 4 summary:
+✅ Frontend prototype shared
+✅ Database schema deployed
+✅ ML accuracy at 85%
+We're ahead of schedule! 🎉
+Keep up the great work team!
+12/04/23, 5:35 PM - Amit: 🚀🚀🚀
+12/04/23, 5:36 PM - Priya: Teamwork makes the dream work! 💫
+
+12/05/23, 9:00 AM - Rahul: Morning team! We have a meeting with the client at 11 AM
+Be prepared with updates
+12/05/23, 9:05 AM - Amit: Got it! I'll prepare the backend demo
+12/05/23, 9:06 AM - Priya: I'll have the ML results ready
+12/05/23, 11:00 AM - Rahul: Meeting starting now...
+12/05/23, 12:30 PM - Rahul: Meeting went great! 🎉
+Client loved the progress
+They want us to also add:
+- User analytics dashboard
+- Export to PDF feature
+- Email notifications
+12/05/23, 12:35 PM - Amit: Those are good additions
+I can handle the email notifications
+12/05/23, 12:36 PM - Priya: I'll work on the analytics dashboard
+It ties in well with the ML work
+12/05/23, 12:37 PM - Rahul: And I'll do the PDF export
+Team, we got this! 💪
+12/05/23, 3:00 PM - Amit: Quick question - should we use SendGrid or AWS SES for emails?
+12/05/23, 3:05 PM - Rahul: Let's go with SendGrid, easier to set up
+12/05/23, 3:06 PM - Amit: 👍 On it
+12/05/23, 6:00 PM - Priya: Done for today. Made good progress on the dashboard wireframes.
+Will share tomorrow.
+12/05/23, 6:05 PM - Rahul: Great! Rest well everyone 😴
+12/05/23, 6:06 PM - Amit: Good night! 🌙

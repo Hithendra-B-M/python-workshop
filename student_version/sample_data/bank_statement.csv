@@ -1,0 +1,37 @@
+Date,Description,Debit,Credit,Balance
+01/03/2024,Opening Balance,,,₹ 45,230.50
+01/03/2024,UPI/Swiggy/Food Order,₹ 350.00,,₹ 44,880.50
+01/03/2024,  UPI/Amazon/Shopping  , ₹ 2,499.00 ,  , ₹ 42,381.50
+2024-03-02,NEFT/Salary,,₹ 55000.00,₹ 97,381.50
+02/03/2024,ATM/Cash Withdrawal,₹ 5,000.00,,₹ 92,381.50
+02/03/2024,UPI/Zomato,"₹ 520.00",,₹ 91,861.50
+03-03-2024,UPI/Netflix/Subscription,₹ 649.00,,₹ 91,212.50
+03/03/2024,UPI/Electricity Bill,₹ 1,850.00,,₹ 89,362.50
+03/03/2024,UPI/PhonePe/Recharge,₹ 399.00,,
+Date,Description,Debit,Credit,Balance
+2024-03-04,Google Pay/Grocery Store,₹ 1,200.00,,₹ 87,763.50
+04/03/2024,UPI/Uber/Ride, ₹230.00,,₹ 87,533.50
+04/03/2024,IMPS/Transfer to Priya,₹ 3,000.00,,₹ 84,533.50
+2024-03-04,Interest Credit,,₹ 125.75,₹ 84,659.25
+05/03/2024,,₹ 0.00,,₹ 84,659.25
+05/03/2024,UPI/BigBasket/Groceries,₹ 2,150.00,,₹ 82,509.25
+03/05/2024,UPI/Spotify,₹ 119.00,,₹ 82,390.25
+2024-03-05,UPI/Starbucks,₹ 450.00,,₹ 81,940.25
+06-03-2024,UPI/Flipkart/Electronics,₹ 15,999.00,,₹ 65,941.25
+06/03/2024,  UPI/Paytm/Movie Tickets  ,₹ 700.00,,₹ 65,241.25
+06/03/2024,NEFT/Freelance Payment,,₹ 12,500.00,₹ 77,741.25
+
+07/03/2024,UPI/Dominos Pizza,₹ 899.00,,₹ 76,842.25
+2024-03-07,UPI/Amazon/Books,₹ 1,350.00,,₹ 75,492.25
+07/03/2024,UPI/Gym Membership,₹ 2,500.00,,₹ 72,992.25
+07/03/2024,UPI/Pharmacy,₹ 320.00,,
+08/03/2024,NEFT/Rent Payment,₹ 15,000.00,,₹ 57,672.25
+2024-03-08,UPI/Ola/Ride,₹ 180.00,,₹ 57,492.25
+08/03/2024,UPI/Chai Point,₹ 90.00,,₹ 57,402.25
+invalid_date,Corrupt Entry,xyz,,ERROR
+09/03/2024,UPI/Reliance Fresh,₹ 3,200.00,,₹ 54,112.25
+09/03/2024,UPI/BookMyShow,₹ 550.00,,₹ 53,562.25
+2024-03-09,RTGS/Insurance Premium,₹ 8,500.00,,₹ 45,062.25
+10/03/2024,UPI/Myntra/Clothing,₹ 3,999.00,,₹ 41,063.25
+10/03/2024,Google Pay/Petrol,₹ 2,000.00,,₹ 39,063.25
+2024-03-10,NEFT/Dividend,,₹ 750.00,₹ 39,813.25
