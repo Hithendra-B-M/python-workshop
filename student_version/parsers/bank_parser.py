@@ -4,10 +4,9 @@ Parse messy bank statement CSVs and run analytics.
 Uses ONLY Python built-in libraries.
 
 ╔══════════════════════════════════════════════════════════╗
-║  🎓 STUDENT EXERCISES                                   ║
-║  Functions marked with TODO are YOUR tasks to complete.  ║
+║  🎓 STUDENT EXERCISE                                    ║
+║  There is 1 exercise in this file.                      ║
 ║  Look for: # ✏️ EXERCISE                                ║
-║  There are 3 exercises in this file.                     ║
 ╚══════════════════════════════════════════════════════════╝
 """
 
@@ -36,7 +35,7 @@ def _parse_bank_date(raw: str) -> datetime | None:
       - MM/DD/YYYY  (e.g., 03/05/2024)
 
     ╔══════════════════════════════════════════════════════╗
-    ║  ✏️ EXERCISE 4: Multi-Format Date Parser             ║
+    ║  ✏️ EXERCISE: Multi-Format Date Parser               ║
     ║                                                      ║
     ║  Bank statements use inconsistent date formats.      ║
     ║  Try each format with datetime.strptime() and        ║
@@ -56,7 +55,7 @@ def _parse_bank_date(raw: str) -> datetime | None:
     """
     # YOUR CODE HERE:
     # raw = raw.strip()
-    # date_formats = ["%d/%m/%Y", "%Y-%m-%d", ...]
+    # date_formats = ["%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y", "%m/%d/%Y"]
     # for fmt in date_formats:
     #     try:
     #         return datetime.strptime(raw, fmt)
@@ -66,13 +65,11 @@ def _parse_bank_date(raw: str) -> datetime | None:
     pass  # ← Remove this when you add your code
 
 
-# ─── Parsing (provided) ─────────────────────────────────────────────────────
+# ─── Parsing ────────────────────────────────────────────────────────────────
 
 def parse_bank_statement(filepath: str) -> tuple[list[dict], list[str]]:
     """
     Parse a messy bank statement CSV.
-    This function is PROVIDED — study it to understand how csv.reader
-    handles messy data with error handling.
 
     Returns
     -------
@@ -97,7 +94,7 @@ def parse_bank_statement(filepath: str) -> tuple[list[dict], list[str]]:
                     if not row or all(c.strip() == "" for c in row):
                         continue
 
-                    # Must have at least 3 columns
+                    # Must have at least 3 columns (Date, Description, Debit)
                     if len(row) < 3:
                         warnings.append(f"Row {row_num}: too few columns → {raw_line[:60]}")
                         continue
@@ -108,24 +105,28 @@ def parse_bank_statement(filepath: str) -> tuple[list[dict], list[str]]:
                     credit_str = row[3].strip() if len(row) > 3 else ""
                     balance_str = row[4].strip() if len(row) > 4 else ""
 
-                    # Parse date — uses YOUR Exercise 4 function!
+                    # Parse date — uses YOUR Exercise function!
                     dt = _parse_bank_date(date_str)
                     if dt is None:
-                        warnings.append(f"Row {row_num}: bad date '{date_str}'")
+                        warnings.append(f"Row {row_num}: bad date '{date_str}' → {raw_line[:60]}")
                         continue
 
+                    # Skip rows with empty description
                     if not description:
-                        warnings.append(f"Row {row_num}: empty description")
+                        warnings.append(f"Row {row_num}: empty description — skipped")
                         continue
 
+                    # Parse amounts
                     debit = safe_float(debit_str)
                     credit = safe_float(credit_str)
                     balance = safe_float(balance_str)
 
+                    # Skip rows with no financial data at all
                     if debit is None and credit is None and balance is None:
-                        warnings.append(f"Row {row_num}: no numeric data")
+                        warnings.append(f"Row {row_num}: no numeric data → {raw_line[:60]}")
                         continue
 
+                    # Treat debit=0 as no debit
                     if debit is not None and debit == 0.0:
                         debit = None
 
@@ -138,7 +139,7 @@ def parse_bank_statement(filepath: str) -> tuple[list[dict], list[str]]:
                     })
 
                 except Exception as e:
-                    warnings.append(f"Row {row_num}: error — {e}")
+                    warnings.append(f"Row {row_num}: unexpected error — {e}")
 
     except FileNotFoundError:
         warnings.append(f"File not found: {filepath}")
@@ -147,81 +148,6 @@ def parse_bank_statement(filepath: str) -> tuple[list[dict], list[str]]:
 
 
 # ─── Analytics ──────────────────────────────────────────────────────────────
-
-def _top_merchants(transactions: list[dict]) -> None:
-    """
-    Extract and display the top spending merchants/categories.
-
-    ╔══════════════════════════════════════════════════════╗
-    ║  ✏️ EXERCISE 5: Merchant Spending Extractor          ║
-    ║                                                      ║
-    ║  Descriptions look like "UPI/Swiggy/Food Order".     ║
-    ║  Extract the merchant name (2nd part after /)        ║
-    ║  and sum up all debits per merchant.                 ║
-    ║                                                      ║
-    ║  DIFFICULTY: ⭐⭐ (Medium)                           ║
-    ║  ESTIMATED TIME: 20 minutes                          ║
-    ║                                                      ║
-    ║  HINTS:                                              ║
-    ║  1. Use a defaultdict(float) for totals              ║
-    ║  2. Loop through transactions with debits            ║
-    ║  3. Split description by "/" to get parts            ║
-    ║  4. Merchant = parts[1] if len(parts) > 1           ║
-    ║     else parts[0]                                    ║
-    ║  5. Sort by total and display top 10                 ║
-    ║  6. Use print_table(["Merchant","Spent"], rows)      ║
-    ╚══════════════════════════════════════════════════════╝
-    """
-    print_subheader("Top Merchants / Categories")
-
-    # YOUR CODE HERE:
-    # desc_spending = defaultdict(float)
-    # for t in transactions:
-    #     if t["debit"] is not None:
-    #         parts = t["description"].split("/")
-    #         merchant = ...
-    #         desc_spending[merchant] += t["debit"]
-    # sorted_merchants = sorted(...)
-    # rows = ...
-    # print_table(["Merchant", "Total Spent"], rows)
-    print("    (Not implemented yet — complete Exercise 5!)")
-
-
-def _monthly_summary(transactions: list[dict]) -> None:
-    """
-    Display total debits and credits per month.
-
-    ╔══════════════════════════════════════════════════════╗
-    ║  ✏️ EXERCISE 6: Monthly Summary Aggregation          ║
-    ║                                                      ║
-    ║  Group all transactions by month and show            ║
-    ║  total debits vs total credits per month.            ║
-    ║                                                      ║
-    ║  DIFFICULTY: ⭐⭐ (Medium)                           ║
-    ║  ESTIMATED TIME: 20 minutes                          ║
-    ║                                                      ║
-    ║  HINTS:                                              ║
-    ║  1. Use two defaultdict(float): one for debits,      ║
-    ║     one for credits                                  ║
-    ║  2. Get month key: t["date"].strftime("%Y-%m")       ║
-    ║  3. Accumulate debits and credits separately         ║
-    ║  4. Combine all month keys, sort them                ║
-    ║  5. Display with print_table()                       ║
-    ║  6. Format amounts as f"₹ {amt:,.2f}"               ║
-    ╚══════════════════════════════════════════════════════╝
-    """
-    print_subheader("Monthly Summary")
-
-    # YOUR CODE HERE:
-    # monthly_debit = defaultdict(float)
-    # monthly_credit = defaultdict(float)
-    # for t in transactions:
-    #     month_key = t["date"].strftime("%Y-%m")
-    #     ...
-    # rows = ...
-    # print_table(["Month", "Total Debits", "Total Credits"], rows)
-    print("    (Not implemented yet — complete Exercise 6!)")
-
 
 def analyze_bank(filepath: str) -> None:
     """Parse and print full analytics for a bank statement."""
@@ -232,7 +158,7 @@ def analyze_bank(filepath: str) -> None:
     transactions, warnings = parse_bank_statement(filepath)
 
     if not transactions:
-        print_warning("No transactions parsed. Did you complete Exercise 4?")
+        print_warning("No transactions parsed. Did you complete the Exercise?")
         return
 
     print_ok(f"Parsed {len(transactions)} transactions successfully")
@@ -240,8 +166,10 @@ def analyze_bank(filepath: str) -> None:
         print_warning(f"Skipped {len(warnings)} problematic rows")
         for w in warnings[:5]:
             print_warning(f"  {w}")
+        if len(warnings) > 5:
+            print_warning(f"  … and {len(warnings) - 5} more")
 
-    # ── Highest spending day (provided) ──────────────────────────────────
+    # ── Highest spending day ─────────────────────────────────────────────
     print_subheader("Highest Spending Days")
     day_spending: defaultdict = defaultdict(float)
     for t in transactions:
@@ -251,13 +179,37 @@ def analyze_bank(filepath: str) -> None:
     rows = [[day, f"₹ {amt:,.2f}"] for day, amt in sorted_days[:5]]
     print_table(["Day", "Total Spending"], rows)
 
-    # ── Top merchants — EXERCISE 5 ──────────────────────────────────────
-    _top_merchants(transactions)
+    # ── Top merchants / descriptions ─────────────────────────────────────
+    print_subheader("Top Merchants / Categories")
+    desc_spending: defaultdict = defaultdict(float)
+    for t in transactions:
+        if t["debit"] is not None:
+            # Extract merchant from description like "UPI/Swiggy/Food Order"
+            parts = t["description"].split("/")
+            merchant = parts[1] if len(parts) > 1 else parts[0]
+            desc_spending[merchant.strip()] += t["debit"]
+    sorted_merchants = sorted(desc_spending.items(), key=lambda x: x[1], reverse=True)
+    rows = [[name, f"₹ {amt:,.2f}"] for name, amt in sorted_merchants[:10]]
+    print_table(["Merchant", "Total Spent"], rows)
 
-    # ── Monthly summary — EXERCISE 6 ────────────────────────────────────
-    _monthly_summary(transactions)
+    # ── Monthly totals ───────────────────────────────────────────────────
+    print_subheader("Monthly Summary")
+    monthly_debit: defaultdict = defaultdict(float)
+    monthly_credit: defaultdict = defaultdict(float)
+    for t in transactions:
+        month_key = t["date"].strftime("%Y-%m")
+        if t["debit"]:
+            monthly_debit[month_key] += t["debit"]
+        if t["credit"]:
+            monthly_credit[month_key] += t["credit"]
+    all_months = sorted(set(list(monthly_debit.keys()) + list(monthly_credit.keys())))
+    rows = [
+        [m, f"₹ {monthly_debit.get(m, 0):,.2f}", f"₹ {monthly_credit.get(m, 0):,.2f}"]
+        for m in all_months
+    ]
+    print_table(["Month", "Total Debits", "Total Credits"], rows)
 
-    # ── Transaction statistics (provided) ────────────────────────────────
+    # ── Average transaction ──────────────────────────────────────────────
     print_subheader("Transaction Statistics")
     debits = [t["debit"] for t in transactions if t["debit"] is not None]
     credits = [t["credit"] for t in transactions if t["credit"] is not None]
@@ -270,7 +222,7 @@ def analyze_bank(filepath: str) -> None:
         print_stat("Total credits", f"₹ {sum(credits):,.2f}")
         print_stat("Average credit", f"₹ {sum(credits)/len(credits):,.2f}")
 
-    # ── Transaction type breakdown (provided) ────────────────────────────
+    # ── Transaction type breakdown ───────────────────────────────────────
     print_subheader("Transaction Type Breakdown")
     type_counts: Counter = Counter()
     for t in transactions:
